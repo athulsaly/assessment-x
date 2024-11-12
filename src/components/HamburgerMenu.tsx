@@ -34,33 +34,35 @@ function HamburgerMenu() {
         >
           <div className="flex flex-col w-full">
             <div
-              className="py-2 border-b px-2 cursor-pointer hover:bg-gray-100"
+              className="py-2 border-b px-4 text-sm cursor-pointer hover:bg-gray-100"
               onClick={onMenuClick}
             >
               Home
             </div>
             <div
-              className="py-2 px-2 border-b cursor-pointer hover:bg-gray-100"
+              className="py-2 px-4 text-sm border-b cursor-pointer hover:bg-gray-100"
               onClick={onMenuClick}
             >
               About
             </div>
-            <div className="pt-1 px-2 border-b border-dotted">Services</div>
+            <div className="py-1 px-4 text-sm border-b border-dotted">
+              Services
+            </div>
             <div
-              className="py-2 px-2 border-b border-dashed text-center cursor-pointer hover:bg-gray-100 text-sm"
+              className="py-2 px-4 text-xs border-b border-dashed text-center cursor-pointer hover:bg-gray-100"
               onClick={onMenuClick}
             >
               Service 1
             </div>
             <div
-              className="py-2 px-2 border-b text-center cursor-pointer hover:bg-gray-100 text-sm"
+              className="py-2 px-4 text-xs border-b text-center cursor-pointer hover:bg-gray-100"
               onClick={onMenuClick}
             >
               Service 2
             </div>
           </div>
           <div
-            className="py-2 px-2 cursor-pointer hover:bg-gray-100"
+            className="py-2 px-4 text-sm cursor-pointer hover:bg-gray-100"
             onClick={onMenuClick}
           >
             Contact

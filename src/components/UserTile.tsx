@@ -19,6 +19,15 @@ export const TableRow = ({
 };
 
 const UserTile = ({ user, onClick }: { user: User; onClick: () => void }) => {
+  const onIconClick = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>,
+    eventName: string
+  ) => {
+    event.stopPropagation();
+    window.alert(
+      `Do you want to ${eventName.toLowerCase()} ${user.firstName}'s profile?`
+    );
+  };
   return (
     <div
       onClick={onClick}
@@ -39,7 +48,11 @@ const UserTile = ({ user, onClick }: { user: User; onClick: () => void }) => {
               <div className="text-sm h-10">{`${user.company.title}, ${user.company.department}.`}</div>
             </div>
           </div>
-          <Bookmark className="cursor-pointer" color="green" />
+          <Bookmark
+            className="cursor-pointer"
+            color="green"
+            onClick={(event) => onIconClick(event, "Bookmark")}
+          />
         </div>
         <div className="relative overflow-x-hidden">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -56,8 +69,15 @@ const UserTile = ({ user, onClick }: { user: User; onClick: () => void }) => {
           </table>
         </div>
         <div className="w-full flex justify-end gap-x-3 items-center  bottom-4 right-4">
-          <Edit className="cursor-pointer w-5" />
-          <Trash className="cursor-pointer w-5" color="red" />
+          <Edit
+            className="cursor-pointer w-5"
+            onClick={(event) => onIconClick(event, "Edit")}
+          />
+          <Trash
+            className="cursor-pointer w-5"
+            color="red"
+            onClick={(event) => onIconClick(event, "Delete")}
+          />
         </div>
       </div>
     </div>
